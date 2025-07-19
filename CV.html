@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hope Nyambura - Full-Stack Developer CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #6c63ff;
+      --primary-dark: #564fcc;
+      --primary-light: #e2e1ff;
+      --secondary: #f5f5f7;
+      --dark: #1a1a1a;
+      --light: #ffffff;
+      --gray: #6e6e73;
+      --light-gray: #f8f9fa;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .cv-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid var(--primary-light);
+    }
+
+    .header-left h1 {
+      font-size: 2.2rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .header-left h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--gray);
+    }
+
+    .header-right {
+      text-align: right;
+    }
+
+    .contact-info {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info a {
+      color: var(--dark);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-info a:hover {
+      color: var(--primary);
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      color: var(--primary);
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary-light);
+      display: flex;
+      align-items: center;
+    }
+
+    .section-title i {
+      margin-right: 0.8rem;
+      color: var(--primary);
+    }
+
+    .about p {
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-category {
+      background-color: var(--light-gray);
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .skill-category h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--primary-dark);
+    }
+
+    .skill-category ul {
+      list-style: none;
+    }
+
+    .skill-category li {
+      margin-bottom: 0.5rem;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+    }
+
+    .skill-category li::before {
+      content: "▹";
+      color: var(--primary);
+      margin-right: 0.5rem;
+    }
+
+    .experience-item, .education-item {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .experience-item:last-child, .education-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .item-header h3 {
+      font-size: 1.2rem;
+      color: var(--dark);
+    }
+
+    .item-header .date {
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    .item-subheader {
+      font-style: italic;
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+
+    .item-content ul {
+      list-style: none;
+      margin-left: 1rem;
+    }
+
+    .item-content li {
+      margin-bottom: 0.5rem;
+      color: var(--gray);
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .item-content li::before {
+      content: "•";
+      color: var(--primary);
+      position: absolute;
+      left: 0;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background-color: var(--light-gray);
+      padding: 1.5rem;
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(108, 99, 255, 0.1);
+    }
+
+    .project-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+
+    .project-card p {
+      color: var(--gray);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .project-links a {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .project-links a:first-child {
+      background-color: var(--primary);
+      color: var(--light);
+    }
+
+    .project-links a:first-child:hover {
+      background-color: var(--primary-dark);
+    }
+
+    .project-links a:last-child {
+      background-color: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .project-links a:last-child:hover {
+      background-color: var(--primary-light);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-right {
+        text-align: left;
+        margin-top: 1.5rem;
+        width: 100%;
+      }
+
+      .social-links {
+        justify-content: flex-start;
+      }
+
+      .skills-container, .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .item-header {
+        flex-direction: column;
+      }
+
+      .item-header .date {
+        margin-top: 0.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cv-container">
+    <header>
+      <div class="header-left">
+        <h1>Hope Nyambura</h1>
+        <h2>Full-Stack Developer</h2>
+      </div>
+      <div class="header-right">
+        <div class="contact-info">
+          <p><a href="mailto:defhopeee@gmail.com">defhopeee@gmail.com</a></p>
+          <p><a href="tel:+254759406771">+254 759 406 771</a></p>
+          <p><a href="https://hopenyambura.co.ke" target="_blank">hopenyambura.co.ke</a></p>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/defhopeee" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/hope-nyambura-787a2b367/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </header>
+
+    <section class="about">
+      <h2 class="section-title"><i class="fas fa-user"></i> About Me</h2>
+      <p>
+        Multitalented full-stack developer with expertise in web application development, AI, cyber security, and data analysis. 
+        Passionate about creating innovative solutions that solve real-world problems through technology.
+      </p>
+      <p>
+        Strong foundation in both frontend and backend technologies with experience in UI/UX design, system architecture, 
+        and collaborative problem-solving.
+      </p>
+    </section>
+
+    <section class="skills">
+      <h2 class="section-title"><i class="fas fa-laptop-code"></i> Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3>Frontend</h3>
+          <ul>
+            <li>HTML5 & CSS3</li>
+            <li>JavaScript (ES6+)</li>
+            <li>React.js</li>
+            <li>Responsive Design</li>
+            <li>UI/UX Principles</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Backend</h3>
+          <ul>
+            <li>PHP</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>Node.js</li>
+            <li>RESTful APIs</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Databases</h3>
+          <ul>
+            <li>MySQL</li>
+            <li>MongoDB</li>
+            <li>Database Design</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Tools & Other</h3>
+          <ul>
+            <li>Git & GitHub</li>
+            <li>VS Code</li>
+            <li>Figma</li>
+            <li>AI & Machine Learning</li>
+            <li>Cyber Security</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience">
+      <h2 class="section-title"><i class="fas fa-briefcase"></i> Work Experience</h2>
+      <div class="experience-item">
+        <div class="item-header">
+          <h3>Full-Stack Developer</h3>
+          <span class="date">2022 - Present</span>
+        </div>
+        <div class="item-subheader">Freelance</div>
+        <div class="item-content">
+          <ul>
+            <li>Developed and deployed multiple web applications for clients across various industries</li>
+            <li>Implemented secure authentication systems and database architectures</li>
+            <li>Collaborated with clients to understand requirements and deliver customized solutions</li>
+            <li>Optimized application performance and security through code reviews and testing</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Add more experience items as needed -->
+    </section>
+
+    <section class="projects">
+      <h2 class="section-title"><i class="fas fa-code"></i> Key Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Certificate Verification System</h3>
+          <p>A secure platform for verifying academic certificates with blockchain technology to prevent fraud.</p>
+          <div class="project-links">
+            <a href="https://certificatechecker.hopenyambura.co.ke/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="https://github.com/defhopeee" target="_blank"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>Secure Exam System</h3>
+          <p>A comprehensive online examination platform with anti-cheating measures and real-time monitoring.</p>
+          <div class="project-links">
+            <a href="https://secureexamsystem.hopenyambura.co.ke/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="https://github.com/defhopeee" target="_blank"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>Student Portal</h3>
+          <p>A centralized platform for students to access courses, grades, and academic resources.</p>
+          <div class="project-links">
+            <a href="https://studentportal.hopenyambura.co.ke/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="https://github.com/defhopeee" target="_blank"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>Drug Anti-Counterfeit System</h3>
+          <p>Web-based solution to validate and trace genuine pharmaceutical products.</p>
+          <div class="project-links">
+            <a href="https://druganticounterfeit.hopenyambura.co.ke/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="https://github.com/defhopeee" target="_blank"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="education">
+      <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+      <div class="education-item">
+        <div class="item-header">
+          <h3>Diploma in Information Communication Technology</h3>
+          <span class="date">2022 - 2025</span>
+        </div>
+        <div class="item-subheader">NIBS Technical College</div>
+        <div class="item-content">
+          <ul>
+            <li>Specialized in Software Development and Information Security</li>
+            <li>Participated in multiple hackathons and coding competitions</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Add more education items as needed -->
+    </section>
+  </div>
+</body>
+</html>
